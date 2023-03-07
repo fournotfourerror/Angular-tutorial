@@ -1,0 +1,29 @@
+<html ng-app='customersApp'>
+    <head>
+    </head>
+    
+    <body ng-controller='NamesController'>
+        Filter : <input type="text" ng-model='sampleFilter.name'/>
+        
+        <table>
+            <tr>
+                <th> Name </th>
+                <th> Salary </th>
+            </tr>
+            
+            <tr ng-repeat="name in names | filter:sampleFilter">
+                <td> {{name.name}} </td>
+                <td> {{name.salary}} </td>
+            </tr>
+        </table>
+        
+        <span> Number of users : {{names.length}}</span>
+    </body>
+    
+    <script src="angularOld.js"></script>
+    <script src="app/controllers/usersController.js"></script>
+    
+    <script src='app/modules/app.js'></script>
+    
+    <script src='angular-routes.js'></script>
+</html>
